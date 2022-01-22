@@ -1,13 +1,16 @@
 version: '3.7'
+
 services:
+
    master:
-     image: majorcadevs/icecast
-     environment: 
-        - GENERATE_TEMPLATE=True
+      image: ghcr.io/lyl-radio/icecast:latest
+      environment: 
+         GENERATE_TEMPLATE: "true"
+
    relay:
-      image: majorcadevs/icecast
+      image: ghcr.io/lyl-radio/icecast:latest
       environment:
-        - GENERATE_TEMPLATE=True
-        - ENABLE_RELAY=True
-        - IC_RELAY_MASTER_SERVER=master
-        - IC_RELAY_MASTER_UPDATE_INTERVAL=30
+         GENERATE_TEMPLATE: "true"
+         ENABLE_RELAY: "true"
+         IC_RELAY_MASTER_SERVER: master
+         IC_RELAY_MASTER_UPDATE_INTERVAL: 30

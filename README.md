@@ -39,12 +39,12 @@ This image contains a template generator called [mo](https://github.com/tests-al
 
 * With template generation
 ```
-docker run -td -e GENERATE_TEMPLATE=True majorcadevs/icecast
+docker run -td -e GENERATE_TEMPLATE=True ghcr.io/lyl-radio/icecast:latest
 ```
 
 * With your own config
 ```
-docker run -it -v "config:/etc/icecast.xml" majorcadevs/icecast
+docker run -it -v "config:/etc/icecast.xml" ghcr.io/lyl-radio/icecast:latest
 ```
 
 #### Docker Compose
