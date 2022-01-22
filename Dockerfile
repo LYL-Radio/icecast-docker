@@ -40,6 +40,7 @@ ENV IC_ADMIN="icemaster@localhost" \
     IC_DEBUG_LOGLEVEL="3" \
     IC_LOGSIZE="10000"
 
+RUN chown icecast:icecast /etc/icecast.xml
 
 RUN ln -fs /dev/stdout /var/log/icecast/access.log && \
     ln -fs /dev/stderr /var/log/icecast/error.log
@@ -51,4 +52,5 @@ EXPOSE 8000
 
 USER icecast
 
-ENTRYPOINT [ "/entrypoint.sh", "icecast", "-c", "/etc/icecast.xml" ]
+ENTRYPOINT [ "/entrypoint.sh", "icecast"]
+CMD ["-c", "/etc/icecast.xml"]
